@@ -39,7 +39,7 @@ const ProcessInputForm = ({ algorithm, isPreemptive, processes, onProcessesChang
         </button>
       </div>
 
-      <div className="border border-neutral-500 rounde overflow-x-auto">
+      <div className="border border-neutral-500 rounded-md overflow-x-auto">
         <table className="w-full">
           <thead className='border-b border-neutral-500'>
             <tr className="text-left font-mono text-lg">
