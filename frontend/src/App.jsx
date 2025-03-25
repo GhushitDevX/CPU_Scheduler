@@ -71,14 +71,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 to-indigo-900 text-white p-6">
-      <div className="max-w-6xl mx-auto">
-        <header className="text-center mb-10">
-          <h1 className="text-4xl font-bold mb-2">CPU Scheduler Simulator</h1>
-          <p className="text-xl opacity-80">Visualize and analyze different CPU scheduling algorithms</p>
-        </header>
+    <div className="relative text-white">
+      <div className="relative flex flex-col bg-neutral-900 bg-gray-90 min-h-screen items-center">
+      <div className="text-center bg bg-black border-b-4 w-full p-5">
+          <h1 className="text-2xl md:text-5xl uppercase font-mono font-bold text-violet-500 mb-2">CPU Scheduler Simulator</h1>
+          <p className="md:text-xl opacity-90">Let's visualize and analyze different CPU scheduling algorithms</p>
+      </div>
         
-        <div className="bg-gray-800 rounded-xl shadow-2xl p-6 mb-8">
+        <div className="border border-neutral-500 px-20 rounded-xl bg-black rounde shadow-2xl md:h-[700px md:w-[1350px] p-10 mt-14">
           <AlgorithmSelector 
             algorithm={algorithm} 
             onAlgorithmChange={handleAlgorithmChange} 
@@ -99,7 +99,7 @@ function App() {
             <button 
               onClick={runSimulation}
               disabled={isLoading}
-              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 disabled:opacity-50"
+              className="px-8 py-3 button"
             >
               {isLoading ? 'Simulating...' : 'Run Simulation'}
             </button>
@@ -112,8 +112,13 @@ function App() {
           )}
         </div>
         
-        {results && <SimulationResults results={results} />}
+        <div className="text-center w-full p-8 mt-6">
+          <h1 className="text-3xl font-mono uppercase font-bold text-red-500">You can see the visulaizations below</h1>
+          <h2 className='font-mono text-xl'>Just scroll down ⬇︎</h2>
       </div>
+       
+      </div>
+      {results && <SimulationResults results={results} />}
     </div>
   );
 }
