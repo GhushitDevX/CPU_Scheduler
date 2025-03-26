@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/main.go",
+      "use": "@vercel/go"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/react"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/main.go"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/index.html"
+    }
+  ],
+  "env": {
+    "GO_BUILD_FLAGS": "-ldflags '-s -w'"
+  }
+}
